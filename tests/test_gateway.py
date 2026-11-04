@@ -69,7 +69,7 @@ class GatewayTest(unittest.TestCase):
             xai_api_key="secret-key-canary",
             xai_model="grok-test",
             backend="echo",
-            assistant_name="Марфа",
+            assistant_name="Aino",
             allowed_phones=frozenset({"358401111111", "358402222222"}),
             owner_phone="358401111111",
             data_dir=self.data,
@@ -222,7 +222,7 @@ class GatewayTest(unittest.TestCase):
         self.assertIsNone(family_notes(self.store, child, "ревизия"))
         self.assertIsNone(family_notes(self.store, owner, "что завтра"))
         notes = family_notes(self.store, owner, "/review@family_bot")
-        self.assertIn("CHILD-NOTE", build_instructions("Марфа", "rules", "Я", "", notes))
+        self.assertIn("CHILD-NOTE", build_instructions("Aino", "rules", "Я", "", notes))
 
     def test_model_payload_has_no_token_and_no_other_chat(self):
         self._register()
