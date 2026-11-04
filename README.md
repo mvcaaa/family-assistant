@@ -60,7 +60,7 @@ family.example.com {
 
 ## Docker
 
-Пуш в `main`, который меняет образ, собирает `linux/amd64` и публикует `ghcr.io/mvcaaa/family-assistant` с тегами `latest` и `sha-<commit>`. Секреты остаются в `.env` и в образ не попадают. Порт опубликован только на `127.0.0.1`, поэтому сам по себе хост не становится публичным.
+Пуш в `main`, который меняет образ, собирает `linux/amd64` и `linux/arm64` и публикует `ghcr.io/mvcaaa/family-assistant` с тегами `latest` и `sha-<commit>`. На Apple Silicon берётся arm64. Секреты остаются в `.env` и в образ не попадают. Порт опубликован только на `127.0.0.1`, поэтому сам по себе хост не становится публичным.
 
 ```bash
 cp deploy/env.example .env
