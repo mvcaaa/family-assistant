@@ -62,10 +62,12 @@ family.example.com {
 
 Пуш в `main`, который меняет образ, собирает `linux/amd64` и `linux/arm64` и публикует `ghcr.io/mvcaaa/family-assistant` с тегами `latest` и `sha-<commit>`. На Apple Silicon берётся arm64. Секреты остаются в `.env` и в образ не попадают. Порт опубликован только на `127.0.0.1`, поэтому сам по себе хост не становится публичным.
 
+Секреты лежат в vault `family-assistant` в 1Password. Файл `.env` собирается на ноутбуке и на диск TrueNAS попадает уже готовым. На NAS аккаунт 1Password не нужен.
+
 ```bash
-cp deploy/env.example .env
-# заполни .env, затем:
-docker compose up -d --build
+op inject -i deploy/env.op.tpl -o .env
+chmod 600 .env
+docker compose up -d
 curl -sS http://127.0.0.1:8787/health
 ```
 
