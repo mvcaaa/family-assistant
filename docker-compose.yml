@@ -3,7 +3,7 @@ name: family-assistant
 services:
   family-assistant:
     build: .
-    image: family-assistant:local
+    image: ghcr.io/mvcaaa/family-assistant:latest
     restart: unless-stopped
     env_file:
       - .env
