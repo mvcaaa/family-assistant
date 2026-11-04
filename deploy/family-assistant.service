@@ -1,0 +1,19 @@
+[Unit]
+Description=Family Telegram assistant gateway
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=familybot
+Group=familybot
+WorkingDirectory=/opt/family-assistant
+Environment=PYTHONPATH=/opt/family-assistant/src
+ExecStart=/usr/bin/python3 -m family_assistant --env /etc/family-assistant.env
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,9 @@
+.git
+data
+.env
+**/.env
+**/__pycache__
+**/*.pyc
+tests
+README.md
+deploy/*.service
