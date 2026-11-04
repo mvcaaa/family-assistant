@@ -80,7 +80,7 @@ class Config:
             xai_api_key=api_key,
             xai_model=os.environ.get("XAI_MODEL", "grok-4.7").strip() or "grok-4.7",
             backend=backend,
-            assistant_name=os.environ.get("ASSISTANT_NAME", "Владимир").strip() or "Владимир",
+            assistant_name=os.environ.get("ASSISTANT_NAME", "Марфа").strip() or "Марфа",
             allowed_phones=phones,
             owner_phone=owner,
             data_dir=data_dir,
